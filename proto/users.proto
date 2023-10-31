@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package UserService;
+
+option go_package = "github.com/KhetwalDevesh/project-totality/proto";
+
+message User {
+  int32 id = 1;
+  string name = 2;
+  string city = 3;
+  int64 phone = 4;
+  float height = 5;
+  bool married = 6;
+}
+
+service UserService {
+  rpc GetUserById (UserRequest) returns (UserResponse);
+  rpc GetUsersByIds (UsersRequest) returns (UsersResponse);
+}
+
+message UserRequest {
+  int32 id = 1;
+}
+
+message UserResponse {
+  User user = 1;
+}
+
+message UsersRequest {
+  repeated int32 ids = 1;
+}
+
+message UsersResponse {
+  repeated User users = 1;
+}
