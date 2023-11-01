@@ -13,7 +13,7 @@ import (
 	"strings"
 )
 
-var address = "localhost:50051"
+var address = "server-totality:50051"
 
 func getUserDetailsByID(client pb.UserServiceClient) {
 	reader := bufio.NewReader(os.Stdin)

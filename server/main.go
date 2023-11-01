@@ -11,7 +11,7 @@ import (
 	"net"
 )
 
-var address = "localhost:50051"
+var address = "0.0.0.0:50051"
 
 type UserServiceServer struct {
 	pb.UserServiceServer
